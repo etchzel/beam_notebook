@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  beam_notebook:
+    build:
+      context: .
+      dockerfile: ./Dockerfile  
+    env_file:
+      - .env
+    volumes:
+      - "./notebooks:/home/jupyter:rw"
+    ports:
+      - "8888:8888"
+    entrypoint: ["jupyter", "lab", "--ip=0.0.0.0", "--port=8888", "--no-browser", "--notebook-dir=/home/jupyter"]
+    container_name: beam_workbench
+  
