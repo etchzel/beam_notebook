@@ -21,7 +21,7 @@ RUN python -m pip install --upgrade pip setuptools wheel --no-cache-dir
 RUN pip install 'apache-beam[gcp,test,interactive]'
 RUN pip install jupyterlab ipykernel ipywidgets
 RUN pip install jupyterlab_widgets
-# RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager
+RUN jupyter labextension install apache-beam-jupyterlab-sidepanel
 
 RUN useradd -m -U jupyter
 
